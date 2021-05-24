@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="static/css/font-awesome.min.css">
+<title>Commit | Code pong</title>
+</head>
+<body>
+
+<div class="menu">
+<a href="home">Home</a>
+|
+<a href="next">Next</a>
+|
+<a href="commit" class="highlighted">Commit</a>
+</div>
+
+<h1 style="text-align: center; padding: 12px;">Code pong</h1>
+
+<form action="commit" method="post">
+
+<div class="f_row">
+<div>
+<label for="f_username">Username</label>
+</div>
+
+<div>
+<input id="f_username" type="text" name="username" value="" placeholder="ReactorScram">
+</div>
+</div>
+
+<div class="f_row">
+<div>
+<label for="f_url">Git repo URL</label>
+</div>
+
+<div>
+<input id="f_url" type="text" name="url" value="" placeholder="https://github.com/UserName/codepong_game.git">
+</div>
+</div>
+
+<div>
+<input id="f_submit" type="submit" value="Commit">
+</div>
+
+</form>
+
+</body>
+</html>

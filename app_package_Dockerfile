@@ -1,0 +1,15 @@
+# debian:buster-slim
+FROM debian@sha256:f077cd32bfea6c4fa8ddeea05c53b27e90c7fad097e2011c9f5f11a8668f8db4
+
+RUN apt-get update \
+&& apt-get upgrade -y \
+&& apt-get install -y libssl1.1 ca-certificates tini
+
+RUN addgroup --gid 10001 user && adduser --system --uid 10000 --gid 10001 user
+
+USER user
+WORKDIR /home/user
+
+COPY ./run_app_package.bash ./
+
+ENTRYPOINT ["/usr/bin/tini", "--", "bash", "./run_app_package.bash"]

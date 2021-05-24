@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="static/css/font-awesome.min.css">
+<title>Code pong</title>
+</head>
+<body>
+
+<div class="menu">
+<a href="home" class="highlighted">Home</a>
+|
+<a href="next">Next</a>
+|
+<a href="commit">Commit</a>
+</div>
+
+<h1 style="text-align: center; padding: 12px;">Code pong</h1>
+
+<pre>
+{{kb_free}} KiB free.
+{{baton_status}}
+</pre>
+
+<a href="git/">Pull the latest code from here</a>
+
+<h2>Latest commits:</h2>
+
+<table style="width: 100%;">
+<colgroup>
+	<col span="1" style="width: 10%;">
+	<col span="1" style="width: 20%;">
+	<col span="1" style="width: 10%;">
+	<col span="1" style="width: 70%;">
+</colgroup>
+
+<thead>
+<tr>
+<th>Author</th>
+<th>Time</th>
+<th>Commit</th>
+<th>URL / Comment</th>
+</tr>
+</thead>
+
+<tbody>
+{{#each commits}}
+<tr>
+<td>{{author}}</td>
+<td class="small_font"><a href="tree/{{id}}/">{{time}}</a></td>
+<td><a href="tree/{{id}}/">{{id_short}}</a></td>
+<td><p class="indent">{{message}}</p></td>
+</tr>
+<tr class="border_bottom">
+<td></td>
+<td class="small_font"></td>
+<td><a href="tree/{{id}}/game.html">Play</a></td>
+<td><p class="indent"></p></td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+<p>A blatant ripoff of <a href="https://openfu.com/codepong/">this site</a></p>
+
+<p>By ReactorScram. Upstream is currently <a href="https://github.com/ReactorScram/codepong">https://github.com/ReactorScram/codepong</a></p>
+
+</body>
+</html>
